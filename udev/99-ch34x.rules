@@ -75,3 +75,6 @@ ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55d
 	RUN+="/bin/sh -c 'echo %k > /sys/bus/usb/drivers/cdc_acm/unbind'", \
 	RUN+="/bin/sh -c 'echo %k > /sys/bus/usb/drivers/usb_ch343/bind'" 
 
+
+KERNEL=="ttyCH343USB*", DRIVERS=="usb_ch343", SYMLINK+="ttyUSB%n"
+
